@@ -30,7 +30,7 @@ function openwasher()
     bidentax =  (input[1] * Config.Tax)  / 100 
     if Config.UseprogressCircle then 
     if lib.progressCircle({
-        duration = 2000,
+        duration = Config.Misc.Progressduration,
         position = 'bottom',
         useWhileDead = false,
         canCancel = false,
@@ -54,7 +54,7 @@ function openwasher()
         end
 
 end
-if not Config.UseprogressCircle then 
+if not Config.Misc.UseprogressCircle then 
     amounttobegivenincash = input[1] - bidentax
     print(tonumber(amounttobegivenincash))
     TriggerServerEvent('kezi:moneywash', amounttobegivenincash, input[1])
