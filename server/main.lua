@@ -1,43 +1,25 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-QBCore.Functions.CreateCallback('getitemcount', function(source, cb)
-    itemcount = 0
-   local src = source
-   local Player = QBCore.Functions.GetPlayer(src)
-   
-   local playerItem = Player.Functions.GetItemByName(Config.Item)
-   
-   if playerItem ~= nil then
-       itemcount = playerItem.amount
-   else
-    
-   end
-   
-   
-   cb(itemcount)
-   itemcount = 0
-   
-   
-   end)
+
 
 RegisterServerEvent('kezi:moneywash', function (money, data01)
 
 
     local src = source
     local b = QBCore.Functions.GetPlayer(src)
-    local asdjasd = b.PlayerData.money["cash"]
     local xPlayer = QBCore.Functions.GetPlayer(src)
 
 
  
 
-    
-       
+    if  tonumber(data01) < 0  then
+        
+    end
         xPlayer.Functions.RemoveMoney('blackmoney', data01)
 
         Wait(1000)
         b.Functions.AddMoney('cash', money)
 
-   
+    
 
 end)
 
@@ -48,4 +30,10 @@ print([[
 end
 
 
-startup()
+
+AddEventHandler('onResourceStart', function(resource)
+   if resource == GetCurrentResourceName() then
+    startup()
+   end
+end)
+
