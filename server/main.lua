@@ -1,31 +1,26 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 
-RegisterServerEvent('kezi:moneywash', function (money, data01)
+RegisterNetEvent('kezi:moneywash', function (amount) -- Wooshie#1337 Fixing 
+   local src = source
+   local Player = QBCore.Functions.GetPlayer(src)
+
+   if tonumber(amount) < 0 then return end
 
 
-    local src = source
-    local b = QBCore.Functions.GetPlayer(src)
-    local xPlayer = QBCore.Functions.GetPlayer(src)
+   
+   bidentax = (amount * Config.Tax)  / 100
+   newAmount = amount - bidentax
 
-
- 
-
-    if  tonumber(data01) < 0  then
-        
-    end
-        xPlayer.Functions.RemoveMoney('blackmoney', data01)
-
-        Wait(1000)
-        b.Functions.AddMoney('cash', money)
-
-    
-
+   if Player.Functions.RemoveMoney("blackmoney", math.ceil(amount)) then
+       Wait(1000)
+       Player.Functions.AddMoney('cash', newAmount)
+   end
 end)
 
 function startup()
 print([[
-[KZ] Kezi-Moneywash has started. | Verison 1.0.2
+[KZ] Kezi-Moneywash has started. | Verison 1.0.1
 ]])
 end
 
