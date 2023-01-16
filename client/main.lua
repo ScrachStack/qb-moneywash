@@ -56,8 +56,7 @@ function openwasher()
 end
 if not Config.Misc.UseprogressCircle then 
     amounttobegivenincash = input[1] - bidentax
-    print(tonumber(amounttobegivenincash))
-    TriggerServerEvent('kezi:moneywash', amounttobegivenincash, input[1])
+    TriggerServerEvent('kezi:moneywash', input[1])
     lib.notify({
         title = 'Laundry | Success',
         description = "You Laundered $" .. input[1] .. " You got "  .." $".. tonumber(amounttobegivenincash) .. " Clean Money from it",
