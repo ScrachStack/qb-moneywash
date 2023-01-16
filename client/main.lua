@@ -17,16 +17,16 @@ function openwasher()
         })
         return
     end
-    if tonumber(input[1]) < 0  then 
-        lib.notify({
-            title = 'Moneywash | Error',
+     if tonumber(input[1]) < 0  then 
+         lib.notify({
+             title = 'Moneywash | Error',
             description = 'Value must be above 0',
-            type = 'info',
-            position = 'top'
-        })
-        return
+             type = 'info',
+             position = 'top'
+         })
+         return
 
-    end
+     end
     bidentax =  (input[1] * Config.Tax)  / 100 
     if Config.UseprogressCircle then 
     if lib.progressCircle({
@@ -71,7 +71,7 @@ end
 
 CreateThread(function()
     while true do
-        Wait(1000)
+        Wait(100)
         inRange = false
         local location = vector3(Config.location.x, Config.location.y, Config.location.z)
         local pos = GetEntityCoords(PlayerPedId())
