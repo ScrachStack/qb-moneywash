@@ -13,3 +13,5 @@ Edit QB-Core > Config.lua
 ```lua
 QBConfig.Money.MoneyTypes = { cash = 500, bank = 5000, crypto = 0, blackmoney = 0 } -- type = startamount - Add or remove money types for your server (for ex. blackmoney = 0), remember once added it will not be removed from the database!
 ```
+Join for support
+https://discord.gg/w87VwVru2M
