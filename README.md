@@ -8,7 +8,7 @@ Allow players in your server to wash there money. The script requries qb core, o
 
 
 Script Preview: 
-![image1|690x388](upload://7XkO7lBGxuKND2vZ1sy2OmkgdA7.jpeg)
+![image1|690x388](https://cdn.discordapp.com/attachments/1028347238331727893/1108103298990473256/37c44a036af9db3f2d081ed4a66b57ed4cab9373_2_690x388.png)
 
 
 Edit QB-Core > Config.lua
