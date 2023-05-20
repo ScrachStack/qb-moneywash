@@ -1,7 +1,4 @@
-
--- JOIN FOR SUPPORT https://discord.gg/qRQ5f5rdmN
 local QBCore = exports['qb-core']:GetCoreObject()
-
 
 function openwasher()
     local input = lib.inputDialog('Wash Money', {'Black Money'})
@@ -17,30 +14,51 @@ function openwasher()
         })
         return
     end
-     if tonumber(input[1]) < 0  then 
-         lib.notify({
-             title = 'Moneywash | Error',
-            description = 'Value must be above 0',
-             type = 'info',
-             position = 'top'
-         })
-         return
 
-     end
-    bidentax =  (input[1] * Config.Tax)  / 100 
-    if Config.UseprogressCircle then 
-    if lib.progressCircle({
-        duration = Config.Misc.Progressduration,
-        position = 'bottom',
-        useWhileDead = false,
-        canCancel = false,
-        disable = {
-            move = true,
-            car = true,
-        },
-   
-    }) then
-    amounttobegivenincash = input[1] - bidentax
+    if tonumber(input[1]) < 0  then 
+        lib.notify({
+            title = 'Moneywash | Error',
+            description = 'Value must be above 0',
+            type = 'info',
+            position = 'top'
+        })
+        return
+    end
+
+    local location = vector3(Config.location.x, Config.location.y, Config.location.z)
+    local currentLocation = nil
+    for _, loc in ipairs(Config.Locations) do
+        if vector3(loc.x, loc.y, loc.z) == location then
+            currentLocation = loc
+            break
+        end
+    end
+
+    if not currentLocation then
+        lib.notify({
+            title = 'Moneywash | Error',
+            description = 'Location not found',
+            type = 'info',
+            position = 'top'
+        })
+        return
+    end
+
+    local tax = currentLocation.tax
+    local bidentax = (input[1] * tax) / 100
+
+    if Config.Misc.UseprogressCircle then 
+        if lib.progressCircle({
+            duration = Config.Misc.Progressduration,
+            position = 'bottom',
+            useWhileDead = false,
+            canCancel = false,
+            disable = {
+                move = true,
+                car = true,
+            },
+        }) then
+            local amounttobegivenincash = input[1] - bidentax
             print(tonumber(amounttobegivenincash))
             TriggerServerEvent('kezi:moneywash', amounttobegivenincash, input[1])
             lib.notify({
@@ -50,28 +68,26 @@ function openwasher()
                 position = 'top'
             })
         else 
-        print("Oh no")
+            print("Oh no")
         end
+    end
 
-end
-if not Config.Misc.UseprogressCircle then 
-    amounttobegivenincash = input[1] - bidentax
-    TriggerServerEvent('kezi:moneywash', input[1])
-    lib.notify({
-        title = 'Laundry | Success',
-        description = "You Laundered $" .. input[1] .. " You got "  .." $".. tonumber(amounttobegivenincash) .. " Clean Money from it",
-        type = 'success',
-        position = 'top'
-    })
-end
+    if not Config.Misc.UseprogressCircle then 
+        local amounttobegivenincash = input[1] - bidentax
+        TriggerServerEvent('kezi:moneywash', input[1])
+        lib.notify({
+            title = 'Laundry | Success',
+            description = "You Laundered $" .. input[1] .. " You got "  .." $".. tonumber(amounttobegivenincash) .. " Clean Money from it",
+            type = 'success',
+            position = 'top'
+        })
+    end
 end 
-
-
 
 CreateThread(function()
     while true do
         Wait(100)
-        inRange = false
+        local inRange = false
         local location = vector3(Config.location.x, Config.location.y, Config.location.z)
         local pos = GetEntityCoords(PlayerPedId())
         if #(pos - location) < 5.0 then
@@ -81,11 +97,10 @@ CreateThread(function()
                 openwasher()
                 lib.hideTextUI()
             end
-        else
         end
+
         if not inRange then
             lib.hideTextUI()
         end
     end
 end)
-
