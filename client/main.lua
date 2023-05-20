@@ -25,15 +25,14 @@ function openwasher()
         return
     end
 
-local currentLocation = nil
-for _, loc in ipairs(Config.Locations) do
-    local dist = #(GetEntityCoords(PlayerPedId()) - vector3(loc.x, loc.y, loc.z))
-    if dist < 5.0 then
-        currentLocation = loc
-        break
+    local currentLocation = nil
+    for _, loc in ipairs(Config.Locations) do
+        local dist = #(GetEntityCoords(PlayerPedId()) - vector3(loc.x, loc.y, loc.z))
+        if dist < 5.0 then
+            currentLocation = loc
+            break
+        end
     end
-end
-
 
     if not currentLocation then
         lib.notify({
@@ -61,7 +60,8 @@ end
         }) then
             local amounttobegivenincash = input[1] - bidentax
             print(tonumber(amounttobegivenincash))
-            TriggerServerEvent('kezi:moneywash', amounttobegivenincash, input[1])
+            local playerCoords = GetEntityCoords(PlayerPedId())
+            TriggerServerEvent('kezi:moneywash', amounttobegivenincash, playerCoords)
             lib.notify({
                 title = 'Laundry | Success',
                 description = "You Laundered $" .. input[1] .. " You got "  .." $".. tonumber(amounttobegivenincash) .. " Clean Money from it",
@@ -75,7 +75,8 @@ end
 
     if not Config.Misc.UseprogressCircle then 
         local amounttobegivenincash = input[1] - bidentax
-        TriggerServerEvent('kezi:moneywash', input[1])
+        local playerCoords = GetEntityCoords(PlayerPedId())
+        TriggerServerEvent('kezi:moneywash', input[1], playerCoords)
         lib.notify({
             title = 'Laundry | Success',
             description = "You Laundered $" .. input[1] .. " You got "  .." $".. tonumber(amounttobegivenincash) .. " Clean Money from it",
