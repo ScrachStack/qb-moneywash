@@ -1,15 +1,14 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-RegisterNetEvent('kezi:moneywash', function(amount)
+RegisterNetEvent('kezi:moneywash', function(amount, playerCoords)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
     if tonumber(amount) < 0 then return end
 
     local currentLocation = nil
-    local location = GetEntityCoords(PlayerPedId())
     for _, loc in ipairs(Config.Locations) do
-        local dist = #(location - vector3(loc.x, loc.y, loc.z))
+        local dist = #(playerCoords - vector3(loc.x, loc.y, loc.z))
         if dist < 5.0 then
             currentLocation = loc
             break
