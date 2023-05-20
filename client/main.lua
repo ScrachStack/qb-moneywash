@@ -25,14 +25,15 @@ function openwasher()
         return
     end
 
-    local location = GetEntityCoords(PlayerPedId())
-    local currentLocation = nil
-    for _, loc in ipairs(Config.Locations) do
-        if vector3(loc.x, loc.y, loc.z) == location then
-            currentLocation = loc
-            break
-        end
+local currentLocation = nil
+for _, loc in ipairs(Config.Locations) do
+    local dist = #(GetEntityCoords(PlayerPedId()) - vector3(loc.x, loc.y, loc.z))
+    if dist < 5.0 then
+        currentLocation = loc
+        break
     end
+end
+
 
     if not currentLocation then
         lib.notify({
