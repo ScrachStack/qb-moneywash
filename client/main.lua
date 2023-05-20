@@ -25,7 +25,7 @@ function openwasher()
         return
     end
 
-    local location = vector3(Config.location.x, Config.location.y, Config.location.z)
+    local location = GetEntityCoords(PlayerPedId())
     local currentLocation = nil
     for _, loc in ipairs(Config.Locations) do
         if vector3(loc.x, loc.y, loc.z) == location then
@@ -88,14 +88,17 @@ CreateThread(function()
     while true do
         Wait(100)
         local inRange = false
-        local location = vector3(Config.location.x, Config.location.y, Config.location.z)
         local pos = GetEntityCoords(PlayerPedId())
-        if #(pos - location) < 5.0 then
-            inRange = true
-            lib.showTextUI('[E] - Wash Money')
-            if IsControlPressed(0,38) then
-                openwasher()
-                lib.hideTextUI()
+        for _, loc in ipairs(Config.Locations) do
+            local location = vector3(loc.x, loc.y, loc.z)
+            if #(pos - location) < 5.0 then
+                inRange = true
+                lib.showTextUI('[E] - Wash Money')
+                if IsControlPressed(0, 38) then
+                    openwasher()
+                    lib.hideTextUI()
+                end
+                break
             end
         end
 
