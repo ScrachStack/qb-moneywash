@@ -20,7 +20,7 @@ end)
 
 function startup()
 print([[
-[KZ] Kezi-Moneywash has started. | Verison 1.0.1
+[KZ] Kezi-Moneywash has started. | Verison 1.0.3
 ]])
 end
 
