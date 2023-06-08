@@ -6,22 +6,22 @@ function openwasher()
     if not input then return end
 
     if tonumber(input[1]) == 0 then 
-        lib.notify({
-            title = 'Moneywash | Error',
+         lib.notify({
+             title = 'Moneywash | Error',
             description = 'Value cant be 0',
-            type = 'info',
-            position = 'top'
-        })
+           type = 'info',
+             position = 'top'
+         })
         return
     end
 
     if tonumber(input[1]) < 0  then 
-        lib.notify({
-            title = 'Moneywash | Error',
-            description = 'Value must be above 0',
+         lib.notify({
+           title = 'Moneywash | Error',
+           description = 'Value must be above 0',
             type = 'info',
-            position = 'top'
-        })
+             position = 'top'
+         })
         return
     end
 
@@ -34,15 +34,7 @@ function openwasher()
         end
     end
 
-    if not currentLocation then
-        lib.notify({
-            title = 'Moneywash | Error',
-            description = 'Location not found',
-            type = 'info',
-            position = 'top'
-        })
-        return
-    end
+  
 
     local tax = currentLocation.tax
     local bidentax = (input[1] * tax) / 100
@@ -62,12 +54,7 @@ function openwasher()
             print(tonumber(amounttobegivenincash))
             local playerCoords = GetEntityCoords(PlayerPedId())
             TriggerServerEvent('kezi:moneywash', amounttobegivenincash, playerCoords)
-            lib.notify({
-                title = 'Laundry | Success',
-                description = "You Laundered $" .. input[1] .. " You got "  .." $".. tonumber(amounttobegivenincash) .. " Clean Money from it",
-                type = 'success',
-                position = 'top'
-            })
+       
         else 
             print("Oh no")
         end
@@ -77,12 +64,7 @@ function openwasher()
         local amounttobegivenincash = input[1] - bidentax
         local playerCoords = GetEntityCoords(PlayerPedId())
         TriggerServerEvent('kezi:moneywash', input[1], playerCoords)
-        lib.notify({
-            title = 'Laundry | Success',
-            description = "You Laundered $" .. input[1] .. " You got "  .." $".. tonumber(amounttobegivenincash) .. " Clean Money from it",
-            type = 'success',
-            position = 'top'
-        })
+    
     end
 end 
 
