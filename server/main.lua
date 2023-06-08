@@ -24,10 +24,10 @@ RegisterNetEvent('kezi:moneywash', function(amount, playerCoords)
     local bidentax = (amount * tax) / 100
     local newAmount = amount - bidentax
 
-    if Player.Functions.RemoveMoney("blackmoney", math.ceil(amount)) then
-        Wait(1000)
+    Player.Functions.RemoveItem('markedbills', newAmount)
+    Wait(1000)
         Player.Functions.AddMoney('cash', newAmount)
-    end
+    
 end)
 
 function startup()
