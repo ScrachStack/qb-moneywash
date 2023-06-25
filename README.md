@@ -13,4 +13,4 @@ https://cdn.discordapp.com/attachments/1061196298939797504/1061516331117183036/i
 
 UPDATED IN 1.0.4 to use item markedbills
 Join for support
-https://discord.gg/w87VwVru2M
+https://discord.gg/qP3rCzMCMH
