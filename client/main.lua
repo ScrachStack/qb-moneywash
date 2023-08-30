@@ -82,4 +82,4 @@ RegisterCommand("+washmoney", function()
     end
 end, false)
 
-RegisterKeyMapping('washmoney', 'Wash Money', 'keyboard', 'E') 
+RegisterKeyMapping('washmoney', '+Wash Money', 'keyboard', 'E') 
