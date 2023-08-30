@@ -1,16 +1,34 @@
-💰 - Money Wash (QBCore)
+![image](https://github.com/Zaps6000/qb-moneywash/assets/122732007/6bab5211-d9e8-4226-b4df-aaea71a9d316)
 
-MLO - https://www.gta5-mods.com/maps/abandoned-laundromat-interior-singleplayer-fivem-gtadps (Optional can be changed :))
+**🚀 Money Wash for QBCore**
 
-Customizable Money Wash!
+Unleash the potential of a customizable Money Wash experience for your FiveM server. Dive into an optional immersive environment provided by the Abandoned Laundromat MLO or choose to integrate your own.
 
-Allow players in your server to wash there money. The script requries qb core, ox_lib it runs at 0.00ms. The script works by choosing a amount of money you want to wash then it will wash the money and give you back the money you washed minus the tax which is configurable.
+🔗 **Key Features**:
+* **Efficient Performance**: The script runs at an optimal 0.00ms.
+* **Flexibility**: Easily set up multiple locations via the config and customize tax for each.
+* **Integration**: Requires QB Core and OX LIB.
+* **Customization**: Update coords based on your preferred Money Wash location.
+Requirements:
+[oxlib](https://github.com/overextended/ox_lib)
+📸 **Preview**: [View Here](https://imgur.com/a/QjnWoLu)
+💾 **Downloads**:
 
-Preview:
-https://cdn.discordapp.com/attachments/1028468351061729350/1061528296157872329/2023-01-08_00-12-13.mp4
+* [Download!](https://kezi-scripts.tebex.io/)
+* [Github Direct Download](https://github.com/KeziCodesSometimes/kezi-moneywash)
 
-https://cdn.discordapp.com/attachments/1061196298939797504/1061516331117183036/image.png
 
-UPDATED IN 1.0.4 to use item markedbills
-Join for support
-https://discord.gg/cfxdev
+🌟 **Explore More Scripts by Me**:
+[Addon Car Menu](https://forum.cfx.re/t/release-menuv-addon-car-menu/5095774)
+ [FiveMAlertify](https://github.com/KeziCodesSometimes/FiveMAlertify)
+[Gunstoreplus](https://forum.cfx.re/t/free-release-standalone-gunstoreplus/5104893)
+[BikeSpawner](https://github.com/Zaps6000/ox_bike)
+[Nearest Postal](https://github.com/Zaps6000/nearest-postal)
+[z_greenzones](https://github.com/Zaps6000/z_greenzones)
+[Icebox Robbery](https://forum.cfx.re/t/release-free-icebox-robbery/5158306)
+[Zaps_PEDMENU](https://forum.cfx.re/t/release-paid-zaps-pedmenu/5164096)
+[Rockstar Editor Menu](https://forum.cfx.re/t/release-free-rockstar-editor-menu/5163886)
+[Zaps_Drugs](https://forum.cfx.re/t/paid-esx-qb-nd-zaps-drugs/5164512)
+---
+MLO - https://www.gta5-mods.com/maps/abandoned-laundromat-interior-singleplayer-fivem-gtadps 
+MLO NOT MADE BY ME
