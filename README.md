@@ -3,7 +3,7 @@
 **🚀 Money Wash for QBCore**
 
 Unleash the potential of a customizable Money Wash experience for your FiveM server. Dive into an optional immersive environment provided by the Abandoned Laundromat MLO or choose to integrate your own.
-
+Support: https//discord.gg/cfxdev
 🔗 **Key Features**:
 * **Efficient Performance**: The script runs at an optimal 0.00ms.
 * **Flexibility**: Easily set up multiple locations via the config and customize tax for each.
