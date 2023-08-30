@@ -54,9 +54,6 @@ function openwasher()
             print(tonumber(amounttobegivenincash))
             local playerCoords = GetEntityCoords(PlayerPedId())
             TriggerServerEvent('kezi:moneywash', amounttobegivenincash, playerCoords)
-       
-        else 
-            print("Oh no")
         end
     end
 
@@ -68,26 +65,21 @@ function openwasher()
     end
 end 
 
-CreateThread(function()
-    while true do
-        Wait(100)
-        local inRange = false
-        local pos = GetEntityCoords(PlayerPedId())
-        for _, loc in ipairs(Config.Locations) do
-            local location = vector3(loc.x, loc.y, loc.z)
-            if #(pos - location) < 5.0 then
-                inRange = true
-                lib.showTextUI('[E] - Wash Money')
-                if IsControlPressed(0, 38) then
-                    openwasher()
-                    lib.hideTextUI()
-                end
-                break
-            end
-        end
+RegisterCommand("+washmoney", function()
+    local pos = GetEntityCoords(PlayerPedId())
+    local atLocation = false
 
-        if not inRange then
-            lib.hideTextUI()
+    for _, loc in ipairs(Config.Locations) do
+        local distance = #(pos - vector3(loc.x, loc.y, loc.z))
+        if distance < 5.0 then
+            atLocation = true
+            break
         end
     end
-end)
+
+    if atLocation then
+        openwasher()
+    end
+end, false)
+
+RegisterKeyMapping('washmoney', 'Wash Money', 'keyboard', 'E') 
