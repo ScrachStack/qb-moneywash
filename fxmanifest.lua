@@ -1,11 +1,11 @@
--- JOIN FOR SUPPORT https://discord.gg/qRQ5f5rdmN
+-- JOIN FOR SUPPORT https://discord.gg/cfxdev
 
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
-author 'Kezi'
+author 'zaps6000'
 description 'Money Wash Script'
-version '1.0.4'
+version '1.0.6'
 
 server_scripts { 
     "server/*",
