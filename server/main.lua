@@ -26,13 +26,13 @@ RegisterNetEvent('kezi:moneywash', function(amount, playerCoords)
 
     if Player.Functions.RemoveItem('markedbills', amount) then
         TriggerClientEvent('chatMessage', src, '^2Moneywash', {255, 255, 255}, 'You will receive in 30 seconds. $' .. tonumber(newAmount) .. ' clean money.')
-        Citizen.Wait(30000) -- 30-second timer
+      --  Citizen.Wait(30000) -- 30-second timer
         Player.Functions.AddMoney('cash', newAmount)
     end
 end)
 
 function startup()
-    print("[Zaps] QB-Moneywash has started. | Version 6.2")
+    print("[Zaps] QB-Moneywash has started. | Version 6.3")
 end
 function zapsupdatee()
 local githubRawUrl = "https://raw.githubusercontent.com/Zaps6000/base/main/api.json"
