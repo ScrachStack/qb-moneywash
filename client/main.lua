@@ -27,7 +27,7 @@ function openwasher()
 
     local currentLocation = nil
     for _, loc in ipairs(Config.Locations) do
-        local dist = #(GetEntityCoords(PlayerPedId()) - vector3(loc.x, loc.y, loc.z))
+        local dist = #(GetEntityCoords(cache.ped - vector3(loc.x, loc.y, loc.z))
         if dist < 5.0 then
             currentLocation = loc
             break
@@ -52,21 +52,21 @@ function openwasher()
         }) then
             local amounttobegivenincash = input[1] - bidentax
             print(tonumber(amounttobegivenincash))
-            local playerCoords = GetEntityCoords(PlayerPedId())
+            local playerCoords = GetEntityCoords(cache.ped)
             TriggerServerEvent('kezi:moneywash', amounttobegivenincash, playerCoords)
         end
     end
 
     if not Config.Misc.UseprogressCircle then 
         local amounttobegivenincash = input[1] - bidentax
-        local playerCoords = GetEntityCoords(PlayerPedId())
+        local playerCoords = GetEntityCoords(cache.ped)
         TriggerServerEvent('kezi:moneywash', input[1], playerCoords)
     
     end
 end 
 
 RegisterCommand("washmoney", function()
-    local pos = GetEntityCoords(PlayerPedId())
+    local pos = GetEntityCoords(cache.ped)
     local atLocation = false
 
     for _, loc in ipairs(Config.Locations) do
