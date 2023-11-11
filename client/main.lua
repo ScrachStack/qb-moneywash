@@ -65,7 +65,7 @@ function openwasher()
     end
 end 
 
-RegisterCommand("+washmoney", function()
+RegisterCommand("washmoney", function()
     local pos = GetEntityCoords(PlayerPedId())
     local atLocation = false
 
@@ -82,4 +82,4 @@ RegisterCommand("+washmoney", function()
     end
 end, false)
 
-RegisterKeyMapping('+washmoney', '+Wash Money', 'keyboard', 'E') 
+RegisterKeyMapping('washmoney', 'Wash Money', 'keyboard', 'E') 
