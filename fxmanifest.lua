@@ -5,7 +5,7 @@ game 'gta5'
 lua54 'yes'
 author 'zaps6000'
 description 'Money Wash Script'
-version '6.3'
+version '6.4'
 
 server_scripts { 
     "server/*",
