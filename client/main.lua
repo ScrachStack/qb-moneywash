@@ -77,11 +77,12 @@ RegisterCommand("washmoney", function()
 end, false)
 
 for _, loc in ipairs(Config.Locations) do
-    lib.points.new({
+    local point = lib.points.new({
         coords = vector3(loc.x, loc.y, loc.z),
         distance = 5,
     })
 end
+
 function point:nearby()
     lib.showTextUI('[E] - Wash Money')
 end
