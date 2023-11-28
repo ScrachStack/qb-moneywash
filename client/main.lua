@@ -1,5 +1,3 @@
-local QBCore = exports['qb-core']:GetCoreObject()
-
 function openwasher()
     local input = lib.inputDialog('Wash Money', {'Black Money'})
         
@@ -27,14 +25,12 @@ function openwasher()
 
     local currentLocation = nil
     for _, loc in ipairs(Config.Locations) do
-        local dist = #(GetEntityCoords(cache.ped - vector3(loc.x, loc.y, loc.z))
+        local dist = #GetEntityCoords(cache.ped - vector3(loc.x, loc.y, loc.z))
         if dist < 5.0 then
             currentLocation = loc
             break
         end
     end
-
-  
 
     local tax = currentLocation.tax
     local bidentax = (input[1] * tax) / 100
@@ -68,7 +64,6 @@ end
 RegisterCommand("washmoney", function()
     local pos = GetEntityCoords(cache.ped)
     local atLocation = false
-
     for _, loc in ipairs(Config.Locations) do
         local distance = #(pos - vector3(loc.x, loc.y, loc.z))
         if distance < 5.0 then
@@ -76,10 +71,19 @@ RegisterCommand("washmoney", function()
             break
         end
     end
-
     if atLocation then
         openwasher()
     end
 end, false)
+
+for _, loc in ipairs(Config.Locations) do
+    lib.points.new({
+        coords = vector3(loc.x, loc.y, loc.z),
+        distance = 5,
+    })
+end
+function point:nearby()
+    lib.showTextUI('[E] - Wash Money')
+end
 
 RegisterKeyMapping('washmoney', 'Wash Money', 'keyboard', 'E') 
