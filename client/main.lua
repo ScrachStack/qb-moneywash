@@ -81,10 +81,18 @@ for _, loc in ipairs(Config.Locations) do
         coords = vector3(loc.x, loc.y, loc.z),
         distance = 5,
     })
-end
+
 
 function point:nearby()
     lib.showTextUI('[E] - Wash Money')
 end
 
+function point:onEnter()
+    lib.showTextUI('[E] - Wash Money')
+end 
+
+function point:onExit()
+lib.hideTextUI()
+end 
+end
 RegisterKeyMapping('washmoney', 'Wash Money', 'keyboard', 'E') 
