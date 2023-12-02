@@ -88,9 +88,6 @@ for i = 1, #Config.Locations do
         distance = 5,
     })
 
-function point:nearby()
-    lib.showTextUI('[E] - Wash Money')
-end
 
 function point:onEnter()
     lib.showTextUI('[E] - Wash Money')
