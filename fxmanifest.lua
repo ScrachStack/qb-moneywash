@@ -3,9 +3,9 @@
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
-author 'zaps6000'
+author 'ScrachStack'
 description 'Money Wash Script'
-version '6.6'
+version '6.7'
 
 server_scripts { 
     "server/*",
