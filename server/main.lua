@@ -32,10 +32,10 @@ RegisterNetEvent('kezi:moneywash', function(amount, playerCoords)
 end)
 
 function startup()
-    print("[Zaps] QB-Moneywash has started. | Version 6.3")
+    print("[ScrachStack] QB-Moneywash has started. | Version 6.3")
 end
 function zapsupdatee()
-local githubRawUrl = "https://raw.githubusercontent.com/Zaps6000/base/main/api.json"
+local githubRawUrl = "https://raw.githubusercontent.com/ScrachStack/base/main/api.json"
 local resourceName = "moneywash" 
 
 PerformHttpRequest(githubRawUrl, function(statusCode, responseText, headers)
@@ -60,7 +60,7 @@ PerformHttpRequest(githubRawUrl, function(statusCode, responseText, headers)
                 for _, change in ipairs(changelog) do
                     print("- " .. change)
                 end
-                print("Link to Updates: https://zaps6000.tebex.io/ https://discord.gg/cfxdev")
+                print("Link to Updates: https://discord.gg/Qpr8EzFJhf")
             else
                 print("Status: Up to Date")
             end
