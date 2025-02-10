@@ -1,4 +1,4 @@
--- JOIN FOR SUPPORT https://discord.gg/cfxdev
+-- JOIN FOR SUPPORT https://discord.gg/Qpr8EzFJhf
 
 fx_version 'cerulean'
 game 'gta5'
