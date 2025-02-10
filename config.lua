@@ -1,7 +1,7 @@
--- JOIN FOR SUPPORT https://discord.gg/cfxdev
--- JOIN FOR SUPPORT https://discord.gg/cfxdev
--- JOIN FOR SUPPORT https://discord.gg/cfxdev
--- JOIN FOR SUPPORT https://discord.gg/cfxdev
+-- JOIN FOR SUPPORT https://discord.gg/Qpr8EzFJhf
+-- JOIN FOR SUPPORT https://discord.gg/Qpr8EzFJhf
+-- JOIN FOR SUPPORT https://discord.gg/Qpr8EzFJhf
+-- JOIN FOR SUPPORT https://discord.gg/Qpr8EzFJhf
 Config = {
     Locations = {
         { name = "Moneywash", x = 1136.79, y = -989.22, z = 46.11, tax = 10 }, -- this is the location from the one on the fourms post!
