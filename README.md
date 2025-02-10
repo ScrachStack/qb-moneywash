@@ -13,14 +13,7 @@ Requirements:
 📸 **Preview**: [View Here](https://imgur.com/a/QjnWoLu)
 💾 **Downloads**:
 
-> Support: https://discord.gg/cfxdev
-
----
-Use code ``zapsdevelopment`` for 30% off 
-
-https://hosting.northhost.fr/
-
-North Host Discord: https://discord.gg/jPtdn7Rxkt 
+> [![Discord](https://img.shields.io/badge/Discord-Support-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/Uwg95JfwYT) 
 
 ---
 MLO - https://www.gta5-mods.com/maps/abandoned-laundromat-interior-singleplayer-fivem-gtadps 
