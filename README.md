@@ -1,7 +1,7 @@
 ![image](https://github.com/Zaps6000/qb-moneywash/assets/122732007/6bab5211-d9e8-4226-b4df-aaea71a9d316)
 
 **🚀 Money Wash for QBCore**
-
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T01APGOO)
 Unleash the potential of a customizable Money Wash experience for your FiveM server. Dive into an optional immersive environment provided by the Abandoned Laundromat MLO or choose to integrate your own.
 🔗 **Key Features**:
 * **Efficient Performance**: The script runs at an optimal 0.00ms.
